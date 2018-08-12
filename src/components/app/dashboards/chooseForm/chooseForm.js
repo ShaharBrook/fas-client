@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Queries} from "./queries";
+import MyQueries from "./queries";
 
 class ChooseForm extends Component {
     constructor(){
@@ -20,18 +20,24 @@ class ChooseForm extends Component {
             }]
         };
         this.select = this.select.bind(this);
+        this.closeForm = this.closeForm.bind(this);
     }
+
     select(queryType){
         return () => {
             this.setState({selectedQueryType: queryType});
         };
+    }
+
+    closeForm() {
+        this.setState({selectedQueryType: null});
     }
   
 render() {
     const templates = this.state.templates.map((e)=>{
         return <img key={e.img} src={e.img} width="200" onClick={this.select(e.queryType)} alt=""/>
     }); 
-        return this.state.selectedQueryType ? <Queries queryType={this.state.selectedQueryType}/> : (
+        return this.state.selectedQueryType ? <MyQueries closeForm={this.closeForm} queryType={this.state.selectedQueryType}/> : (
             <div className="chooseForm">
               <h1>בחר תבנית:</h1>
               {templates}

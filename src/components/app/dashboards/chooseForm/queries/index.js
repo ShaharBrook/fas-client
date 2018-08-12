@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import StarsQuery from "./stars/starsQuery";
 
-export const Queries = ({queryType}) => {
-    console.log(queryType);
-    switch (queryType) {
-        case 'stars':
-            return <StarsQuery/>;
-        default:
-            return null;
-    }
-};
+class MyQueries extends Component {
+    render() {
+        switch (this.props.queryType) {
+            case 'stars':
+                return <StarsQuery closeForm={this.props.closeForm}/>;
+            default:
+                return null;
+        }
+    };
+}
+export default MyQueries;
