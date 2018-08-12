@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import Navbar from "./navbar/navbar";
 import {Header} from "semantic-ui-react";
