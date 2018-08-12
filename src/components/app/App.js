@@ -3,6 +3,8 @@ import './App.css';
 import Navbar from "./navbar/navbar";
 import {Header} from "semantic-ui-react";
 import ChooseForm from "./dashboards/chooseForm/chooseForm";
+import Home from "./dashboards/home/home";
+import Statistics from "./dashboards/statistics/statistics";
 
 class App extends Component {
     constructor(props) {
@@ -26,14 +28,13 @@ class App extends Component {
             <Navbar updateSelected = {this.updateSelected}/>
             <div id="tabs">
                 <div id="tab-home" hidden={this.state.selected !== 'home'}>
-                    <h1>So!</h1>
-                    <p>Lets start working.</p>
+                    <Home/>
                 </div>
                 <div id="tab-addForm" hidden={this.state.selected !== 'addForm'}>
                     <ChooseForm/>
                 </div>
                 <div id="tab-statics" hidden={this.state.selected !== 'statics'}>
-                    statics!!
+                    <Statistics/>
                 </div>
             </div>
         </div>
