@@ -6,9 +6,9 @@ class Navbar extends Component {
         this.state = {
             selected: 'home',
             items: [
-                { key: 'home', name: 'Home' },
-                { key: 'addForm', name: 'Add Form' },
-                { key: 'statics', name: 'Statics' },
+                { key: 'home', name: 'בית' },
+                { key: 'addForm', name: 'הוסף טופס' },
+                { key: 'statics', name: 'סטטיסטיקות' },
             ]
         };
         this.updateSelected = this.updateSelected.bind(this);
