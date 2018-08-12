@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from "./navbar/navbar";
 import {Header} from "semantic-ui-react";
+import ChooseForm from "./dashboards/chooseForm/chooseForm";
 
 class App extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class App extends Component {
     return (
       <div id="app">
         <div id="header">
-            <Header as='h1'>First Header</Header>
+            <Header as='h1'>F.A.A.S</Header>
         </div>
         <div id="main">
             <Navbar updateSelected = {this.updateSelected}/>
@@ -29,7 +30,7 @@ class App extends Component {
                     <p>Lets start working.</p>
                 </div>
                 <div id="tab-addForm" hidden={this.state.selected !== 'addForm'}>
-                    addForm!!
+                    <ChooseForm/>
                 </div>
                 <div id="tab-statics" hidden={this.state.selected !== 'statics'}>
                     statics!!
