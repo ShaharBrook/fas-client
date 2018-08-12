@@ -5,7 +5,14 @@ class App extends Component {
   render() {
     return (
       <div id="app">
-          <h1>Start!</h1>
+        <div id="header">
+          <h1>
+            Welcome!
+          </h1>
+        </div>
+        <div id="main">
+          main
+        </div>
       </div>
     );
   }
