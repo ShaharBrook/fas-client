@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Menu} from "semantic-ui-react";
 
 class Navbar extends Component {
     constructor(props) {
@@ -16,12 +15,14 @@ class Navbar extends Component {
     }
 
     updateSelected(selected) {
-        return () => this.setState({selected});
+        return () => {
+            this.props.updateSelected(selected);
+            this.setState({selected});
+        }
     }
 
     render() {
         let items = this.state.items.map(item=> item.key === this.state.selected ? ({...item, active: true}) : item);
-        console.log(items);
         return <div className='ui menu'>
             {
                 items.map(item => (
