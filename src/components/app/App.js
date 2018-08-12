@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Navbar from "./navbar/navbar";
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
           </h1>
         </div>
         <div id="main">
-          main
+            <Navbar/>
         </div>
       </div>
     );
