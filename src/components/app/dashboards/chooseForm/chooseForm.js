@@ -6,29 +6,26 @@ class ChooseForm extends Component {
         this.state = {
             templates:[{
                 img: 'http://10.25.107.32:3030/assets/template1.svg',
-                type: 'stars'
+                queryType: 'stars'
             },
             {
                 img: 'http://10.25.107.32:3030/assets/template2.svg',
-                type: 'stars'
+                queryType: 'like'
             },
             {
                 img: 'http://10.25.107.32:3030/assets/template3.svg',
-                type: 'stars'
+                queryType: 'tags'
             }]
-        }
+        };
+        this.select = this.select.bind(this);
     }
-    select(e){
-        if(e.target.classList.contains('chosen')){
-            e.target.classList.remove('chosen');
-        } else {
-            e.target.classList.add('chosen');
-        }
+    select(queryType){
+        return () => console.log(queryType);
     }
   
 render() {
     const templates = this.state.templates.map((e)=>{
-        return <img key={e.img} src={e.img} width="200" onClick={this.select.bind(this)} alt=""/>
+        return <img key={e.img} src={e.img} width="200" onClick={this.select(e.queryType)} alt=""/>
     }); 
         return (
             <div className="chooseForm">
