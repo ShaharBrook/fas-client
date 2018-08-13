@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import StarsQuery from "./stars/starsQuery";
+import './queries.css';
 
 class MyQueries extends Component {
     render() {

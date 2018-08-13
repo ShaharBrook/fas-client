@@ -8,10 +8,11 @@ class StarsQuery extends Component {
     }
     render() {
         return this.state.display && <Form>
-            <Button onClick={this.props.closeForm}>x</Button>
+            <Button className='close-button' onClick={this.props.closeForm}>x</Button>
             <Form.Input label='אפליקציה' type='text' />
             <Form.Input label='שאלה' type='text' />
             <Form.Input label='מקסימום' type='number' />
+            <Button type='submit'>ייצר טופס</Button>
         </Form>;
     }
 }

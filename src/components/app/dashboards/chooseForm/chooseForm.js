@@ -37,12 +37,15 @@ render() {
     const templates = this.state.templates.map((e)=>{
         return <img key={e.img} src={e.img} width="200" onClick={this.select(e.queryType)} alt=""/>
     }); 
-        return this.state.selectedQueryType ? <MyQueries closeForm={this.closeForm} queryType={this.state.selectedQueryType}/> : (
+        return this.state.selectedQueryType ? <div id="my-queries">
+                <div id="my-queries-container">
+                    <MyQueries closeForm={this.closeForm} queryType={this.state.selectedQueryType}/>
+                </div>
+            </div> :
             <div className="chooseForm">
               <h1>בחר תבנית:</h1>
               {templates}
-            </div>
-        );
+            </div>;
     }
 }
 
